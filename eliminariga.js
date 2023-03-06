@@ -29,7 +29,7 @@ for(var i = 0; i<listButton.length; i=i+1){
 
 var xhr = new XMLHttpRequest();
 
-xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+xhr.open("GET", "  http://localhost:3000/users/");
 xhr.addEventListener("load", function(){
     var users = JSON.parse(xhr.responseText);
     var tbody = document.querySelector("tbody");
@@ -53,7 +53,7 @@ xhr.addEventListener("load", function(){
             var row = e.target.parentElement.parentElement;
             var xhr = new XMLHttpRequest();
             //queste nuove cose sono chiamate sotto verbo delete per togliere le righe. 200 è la risposta del BackEnd per effettuata cancellazione/
-            xhr.open("DELETE","https://jsonplaceholder.typicode.com/users/".concat(row.dataset.userId));
+            xhr.open("DELETE","  http://localhost:3000/users/".concat(row.dataset.userId));
             xhr.addEventListener("load", function(){
                 if(xhr.status === 200){
                     row.remove()
